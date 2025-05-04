@@ -71,7 +71,7 @@ public class NaderActivity extends AppCompatActivity {
             return;
         }
         String userId = currentUser.getUid();
-        userWaqfsRef = FirebaseDatabase.getInstance().getReference("waqfs").child(userId);
+        userWaqfsRef = FirebaseDatabase.getInstance().getReference("waqfs");
 
         initializeUI();
         fetchWaqfData();
@@ -118,25 +118,33 @@ public class NaderActivity extends AppCompatActivity {
                 List<Waqf> userWaqfs = new ArrayList<>();
 
                 if (dataSnapshot.exists()) {
-                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        Waqf waqf = snapshot.getValue(Waqf.class);
-                        if (waqf != null) {
-                            if (waqf.waqfId == null) {
-                                waqf.waqfId = snapshot.getKey();
-                            }
-                            if (waqf.userId == null && currentUser != null) {
-                                waqf.userId = currentUser.getUid();
-                            }
-                            userWaqfs.add(waqf);
-                            totalCount++;
-                            String status = waqf.status != null ? waqf.status.toUpperCase(Locale.ROOT) : "";
-                            switch (status) {
-                                case "APPROVED": approvedCount++; break;
-                                case "PENDING": pendingCount++; break;
-                                case "NEEDS_EDIT": needsEditCount++; break;
+                    for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                        for (DataSnapshot snapshot : userSnapshot.getChildren()) {
+                            Waqf waqf = snapshot.getValue(Waqf.class);
+                            if (waqf != null) {
+                                if (waqf.waqfId == null) {
+                                    waqf.waqfId = snapshot.getKey();
+                                }
+                                if (waqf.userId == null) {
+                                    waqf.userId = userSnapshot.getKey();
+                                }
+
+                                userWaqfs.add(waqf);
+                                String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+                                if (waqf.userId != null && waqf.userId.equals(userId)) {
+                                    totalCount++;
+                                    String status = waqf.status != null ? waqf.status.toUpperCase(Locale.ROOT) : "";
+                                    switch (status) {
+                                        case "APPROVED": approvedCount++; break;
+                                        case "PENDING": pendingCount++; break;
+                                        case "NEEDS_EDIT": needsEditCount++; break;
+                                    }
+                                }
                             }
                         }
                     }
+
                     Log.d(TAG, "Fetched " + totalCount + " waqfs.");
                 } else {
                     Log.d(TAG, "No Waqf data found for user.");
