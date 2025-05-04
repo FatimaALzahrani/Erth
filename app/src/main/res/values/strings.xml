@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">إرث</string>
+    <string name="back_button_desc">زر الرجوع</string>
+    <string name="waqf_image_desc">صورة الوقف</string>
+    <string name="map_image_desc">صورة الخريطة</string>
+
+    <string name="coverage_percentage">نسبة التغطية</string>
+
+    <string name="general_information">معلومات عامة</string>
+    <string name="investment_return_calculator">حاسبة العائد على التمويل</string>
+    <string name="documents">المستندات</string>
+    <string name="guarantees">الضمانات</string>
+    <string name="project_information">معلومات المشروع</string>
+    <string name="project_location">موقع المشروع</string>
+    <string name="risk_disclaimer_title">إقرار إشعار بالمخاطر</string>
+
+    <string name="select_sukuk_count">اختيار عدد الصكوك الوقفية</string>
+    <string name="investment_amount">مبلغ الاستثمار</string>
+    <string name="net_profit">صافي الأرباح</string>
+    <string name="payment_date_label">تاريخ السداد:</string>
+    <string name="nominal_value_label">القيمة الاسمية:</string>
+    <string name="net_profit_label">صافي الأرباح:</string>
+    <string name="total_amount_label">المبلغ الاجمالي:</string>
+
+    <string name="project_type_label">النوع</string>
+    <string name="number_of_units_label">عدد الوحدات</string>
+    <string name="project_end_date_label">التاريخ المتوقع لانتهاء المشروع</string>
+    <string name="waqif_funding_percentage_label">نسبة التمويل من الواقف</string>
+    <string name="nazir_funding_percentage_label">نسبة التمويل من الناظر</string>
+
+    <string name="risk_disclaimer_placeholder">يقر ويدرك المستخدم/المستثمر بعلمه واطلاعه بأن جميع أنواع الاستثمارات تنطوي على درجة من المخاطير، وأن الاستثمار في الأوراق المالية عبر منصة صكوك يعتبر استثمار عالي المخاطر وأنها ليست مضمونة أو مؤمن عليها بأي شكل كان، كما أن استثماره عرضة لجميع أنواع المخاطر والخسارة بشكل كلي أو جزئي، وأن الاستثمار فيها قد يخضع لقيود معينة من حيث المدة وإمكانية البيع أو التسييل.</string>
+
+    <string name="endow_now">أوقف الآن</string>
+
+    <string name="doc_title_summary">ملخص الوقف</string>
+    <string name="doc_title_sukuk">صك الوقف</string>
+    <string name="doc_title_prospectus">نشرة تعريفية</string>
+    <string name="doc_title_legal">مستندات قانونية</string>
+
+    <string name="guarantee_title_association">ترخيص الجمعية</string>
+    <string name="guarantee_title_authority">خطاب تعريف من الهيئة العامة للأوقاف</string>
+    <string name="guarantee_title_municipal">رخصة بلدي</string>
+</resources>

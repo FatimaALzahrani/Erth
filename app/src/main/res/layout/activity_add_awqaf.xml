@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl"
+    android:background="#F8F8F8">
+
+  <androidx.core.widget.NestedScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="32dp">
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="تسجيل وقف جديد"
+          android:textSize="22sp"
+          android:textColor="#333333"
+          android:textStyle="bold"
+          android:gravity="center"
+          android:layout_marginBottom="24dp"/>
+
+      <com.google.android.material.card.MaterialCardView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:cardCornerRadius="12dp"
+          app:cardElevation="2dp"
+          app:cardBackgroundColor="@android:color/white"
+          app:strokeWidth="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+          <TextView
+              style="@style/FormLabelStyle"
+              android:text="اسم الوقف (*)"/>
+          <com.google.android.material.textfield.TextInputLayout
+              style="@style/FormInputLayoutStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_name"
+                style="@style/FormEditTextStyle" />
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <TextView
+              style="@style/FormLabelStyle"
+              android:text="وصف تفصيلي (*)"/>
+          <com.google.android.material.textfield.TextInputLayout
+              style="@style/FormInputLayoutStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_description"
+                style="@style/FormEditTextStyle"
+                android:minHeight="80dp"
+                android:gravity="top"
+                android:inputType="textMultiLine"/>
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <TextView
+              style="@style/FormLabelStyle"
+              android:text="الهدف (*)"/>
+          <com.google.android.material.textfield.TextInputLayout
+              style="@style/FormInputLayoutStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_goal"
+                style="@style/FormEditTextStyle" />
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <TextView
+              style="@style/FormLabelStyle"
+              android:text="المسار (*)"/>
+          <com.google.android.material.textfield.TextInputLayout
+              style="@style/FormInputLayoutStyle"
+              app:endIconMode="dropdown_menu">
+            <AutoCompleteTextView
+                android:id="@+id/ac_path"
+                style="@style/FormEditTextStyle" />
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <TextView
+              style="@style/FormLabelStyle"
+              android:text="تحديد الموقع الجغرافي (*)"/>
+          <ImageView
+              android:id="@+id/iv_map_placeholder"
+              android:layout_width="match_parent"
+              android:layout_height="180dp"
+              android:src="@drawable/map"
+              android:scaleType="centerCrop"
+              android:background="#EEEEEE"
+              app:shapeAppearanceOverlay="@style/RoundedImageView"
+              android:layout_marginBottom="16dp"
+              android:contentDescription="Map Location Placeholder"/>
+
+          <TextView
+              style="@style/FormLabelStyle"
+              android:text="الصكوك المستهدفة (*)"/>
+          <com.google.android.material.textfield.TextInputLayout
+              style="@style/FormInputLayoutStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_category"
+                style="@style/FormEditTextStyle" />
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <TextView
+              style="@style/FormLabelStyle"
+              android:text="مدة الفرصة (*)"/>
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="من"
+                android:layout_gravity="center_vertical"
+                android:textColor="#555555"
+                android:textSize="14sp"
+                android:layout_marginEnd="8dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/FormInputLayoutStyle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:startIconDrawable="@drawable/calendar"
+                app:startIconTint="#888888">
+              <com.google.android.material.textfield.TextInputEditText
+                  android:id="@+id/date_from"
+                  style="@style/FormEditTextStyle"
+                  android:focusable="false"
+                  android:hint="DD-MM-YYYY" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="إلى"
+                android:layout_gravity="center_vertical"
+                android:textColor="#555555"
+                android:textSize="14sp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/FormInputLayoutStyle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                app:startIconDrawable="@drawable/calendar"
+                app:startIconTint="#888888">
+              <com.google.android.material.textfield.TextInputEditText
+                  android:id="@+id/date_to"
+                  style="@style/FormEditTextStyle"
+                  android:focusable="false"
+                  android:hint="DD-MM-YYYY" />
+            </com.google.android.material.textfield.TextInputLayout>
+          </LinearLayout>
+
+          <TextView
+              style="@style/FormLabelStyle"
+              android:text="إجمالي مبلغ الفرصة (*)"/>
+          <com.google.android.material.textfield.TextInputLayout
+              style="@style/FormInputLayoutStyle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_total_amount"
+                style="@style/FormEditTextStyle"
+                android:inputType="numberDecimal" />
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:baselineAligned="false"
+              android:layout_marginBottom="4dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+              <TextView
+                  style="@style/FormLabelStyle"
+                  android:layout_marginBottom="4dp"
+                  android:text="نسبة التمويل الذاتي (*)"/>
+              <com.google.android.material.textfield.TextInputLayout
+                  style="@style/FormInputLayoutStyle"
+                  android:layout_marginBottom="0dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_self_percent"
+                    style="@style/FormEditTextStyle"
+                    android:inputType="numberDecimal" />
+              </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+              <TextView
+                  style="@style/FormLabelStyle"
+                  android:layout_marginBottom="4dp"
+                  android:text="مبلغ التمويل (*)"/>
+              <com.google.android.material.textfield.TextInputLayout
+                  style="@style/FormInputLayoutStyle"
+                  android:layout_marginBottom="0dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_self_amount"
+                    style="@style/FormEditTextStyle"
+                    android:inputType="numberDecimal" />
+              </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+          </LinearLayout>
+
+          <!-- نسبة ومبلغ التمويل المطلوب (إذا كانت الحقول مختلفة عن الذاتي) -->
+          <!-- Assuming Req fields are needed based on original code -->
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:baselineAligned="false"
+              android:layout_marginTop="12dp"
+              android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginEnd="8dp">
+              <TextView
+                  style="@style/FormLabelStyle"
+                  android:layout_marginBottom="4dp"
+                  android:text="نسبة التمويل المطلوب (*)"/>
+              <com.google.android.material.textfield.TextInputLayout
+                  style="@style/FormInputLayoutStyle"
+                  android:layout_marginBottom="0dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_req_percent"
+                    style="@style/FormEditTextStyle"
+                    android:inputType="numberDecimal" />
+              </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="8dp">
+              <TextView
+                  style="@style/FormLabelStyle"
+                  android:layout_marginBottom="4dp"
+                  android:text="مبلغ التمويل المطلوب (*)"/>
+              <com.google.android.material.textfield.TextInputLayout
+                  style="@style/FormInputLayoutStyle"
+                  android:layout_marginBottom="0dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_req_amount"
+                    style="@style/FormEditTextStyle"
+                    android:inputType="numberDecimal" />
+              </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+          </LinearLayout>
+
+          <!-- Checkboxes (Kept from original, style if needed) -->
+          <CheckBox
+              android:id="@+id/cb_registered"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="تسجيل في الهيئة العامة للأوقاف"
+              android:textSize="14sp"
+              android:layout_marginBottom="8dp"/>
+
+          <CheckBox
+              android:id="@+id/cb_has_mortgage"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="يوجد رهن"
+              android:textSize="14sp"
+              android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+      </com.google.android.material.card.MaterialCardView>
+
+      <!-- Attachments Card -->
+      <com.google.android.material.card.MaterialCardView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          app:cardCornerRadius="12dp"
+          app:cardElevation="2dp"
+          app:cardBackgroundColor="@android:color/white"
+          app:strokeWidth="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="إرفاق المستندات"
+              android:textColor="#333333"
+              android:textSize="16sp"
+              android:textStyle="bold"
+              android:layout_marginBottom="16dp"/>
+
+          <!-- الصك الوقفي -->
+          <TextView
+              style="@style/FormLabelStyle"
+              android:text="الصك الوقفي (إن وجد)"/>
+          <com.google.android.material.textfield.TextInputLayout
+              style="@style/FormInputLayoutStyle"
+              app:startIconDrawable="@drawable/upload"
+              app:startIconTint="#888888">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_doc_waqf"
+                style="@style/FormEditTextStyle"
+                android:hint="اختر ملف PDF"
+                android:focusable="false" />
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <!-- دراسة جدوى -->
+          <TextView
+              style="@style/FormLabelStyle"
+              android:text="دراسة جدوى للمشروع (*)"/>
+          <com.google.android.material.textfield.TextInputLayout
+              style="@style/FormInputLayoutStyle"
+              app:startIconDrawable="@drawable/upload"
+              app:startIconTint="#888888">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_study"
+                style="@style/FormEditTextStyle"
+                android:hint="اختر ملف PDF"
+                android:focusable="false" />
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <!-- رخصة بلدي -->
+          <TextView
+              style="@style/FormLabelStyle"
+              android:text="رخصة بلدي (*)"/>
+          <com.google.android.material.textfield.TextInputLayout
+              style="@style/FormInputLayoutStyle"
+              app:startIconDrawable="@drawable/upload"
+              app:startIconTint="#888888">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_license"
+                style="@style/FormEditTextStyle"
+                android:hint="اختر ملف PDF"
+                android:focusable="false" />
+          </com.google.android.material.textfield.TextInputLayout>
+
+          <!-- السجل التجاري -->
+          <TextView
+              style="@style/FormLabelStyle"
+              android:text="السجل التجاري (*)"/>
+          <com.google.android.material.textfield.TextInputLayout
+              style="@style/FormInputLayoutStyle"
+              app:startIconDrawable="@drawable/upload"
+              app:startIconTint="#888888">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_record"
+                style="@style/FormEditTextStyle"
+                android:hint="اختر ملف PDF"
+                android:focusable="false" />
+          </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+      </com.google.android.material.card.MaterialCardView>
+
+      <!-- Action Buttons -->
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginTop="24dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_draft"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="حفظ كمسودة"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_marginEnd="8dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_send"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="إرسال الطلب"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_marginStart="8dp"/>
+
+      </LinearLayout>
+
+    </LinearLayout>
+  </androidx.core.widget.NestedScrollView>
+
+  <!-- Progress Overlay -->
+  <FrameLayout
+      android:id="@+id/progress_overlay"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="#80000000"
+      android:visibility="gone"
+      android:clickable="true"
+      android:focusable="true"
+      tools:visibility="gone">
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
+  </FrameLayout>
+
+</FrameLayout>
+
+    <!-- Define styles in styles.xml or themes.xml -->
+    <!-- Example styles (add to your styles.xml): -->
+    <!--
+    <style name="FormLabelStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#666666</item>
+    </style>
+
+    <style name="FormInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+        <item name="hintTextColor">#888888</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+    </style>
+
+    <style name="FormEditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textColor">#333333</item>
+    </style>
+
+    <style name="RoundedImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+     Create color state list text_input_box_stroke.xml in res/color:
+     <?xml version="1.0" encoding="utf-8"?>
+     <selector xmlns:android="http://schemas.android.com/apk/res/android">
+         <item android:color="@color/colorPrimary" android:state_focused="true"/>
+         <item android:color="#CCCCCC" android:state_hovered="true"/>
+         <item android:color="#DDDDDD" android:state_enabled="false"/>
+         <item android:color="#E0E0E0"/>
+     </selector>
+
+     Make sure you have drawables like ic_calendar, ic_upload_file, map_placeholder
+     and colors like primaryColor defined in your resources.
+    -->
+

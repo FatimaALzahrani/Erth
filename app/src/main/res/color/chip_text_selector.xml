@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- يجب وضع هذا الملف في مجلد res/color -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- اللون عند اختيار الشريحة -->
+    <item android:color="@color/chipTextSelected" android:state_checked="true"/>
+    <!-- اللون الافتراضي (غير مختارة) -->
+    <item android:color="@color/chipTextUnselected"/>
+</selector>
+

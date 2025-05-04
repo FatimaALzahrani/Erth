@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#01014C</color>
+    <color name="primary_dark">#523EF7</color>
+
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryVariant">#3700B3</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+
+    <color name="colorSecondary">#03DAC6</color>
+    <color name="colorSecondaryVariant">#018786</color>
+    <color name="colorOnSecondary">#000000</color>
+
+    <color name="textColorPrimary">#333333</color>
+    <color name="textColorSecondary">#666666</color>
+    <color name="textColorHint">#888888</color>
+
+    <color name="colorBackground">#F8F8F8</color>
+    <color name="colorCardBackground">#FFFFFF</color>
+    <color name="colorInputBorderDefault">#E0E0E0</color>
+    <color name="colorInputBorderFocused">@color/colorPrimary</color>
+    <color name="colorInputBorderHovered">#CCCCCC</color>
+    <color name="colorInputBorderDisabled">#DDDDDD</color>
+    <color name="colorIconTint">#888888</color>
+    <color name="colorProgressOverlay">#80000000</color>
+
+    <color name="textColorWhite">#FFFFFF</color>
+
+    <color name="colorError">#D32F2F</color>
+    <color name="colorWarning">#FFA000</color>
+    <color name="colorSuccess">#388E3C</color>
+
+    <color name="statusApprovedBackground">#E8F5E9</color>
+    <color name="statusApprovedIcon">@color/colorSuccess</color>
+    <color name="statusPendingBackground">#FFF8E1</color>
+    <color name="statusPendingIcon">@color/colorWarning</color>
+    <color name="statusRejectedBackground">#FFEBEE</color>
+    <color name="statusRejectedIcon">@color/colorError</color>
+
+    <color name="chipBackgroundUnselected">#EEEEEE</color>
+    <color name="chipBackgroundSelected">@color/colorPrimary</color>
+    <color name="chipTextUnselected">@color/textColorSecondary</color>
+    <color name="chipTextSelected">@color/textColorWhite</color>
+
+    <color name="onboarding_background">#F5F5F5</color>
+    <color name="onboarding_primary">#4A00E0</color>
+    <color name="onboarding_text_grey">#666666</color>
+</resources>

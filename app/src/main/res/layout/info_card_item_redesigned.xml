@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/info_card_item_redesigned.xml -->
+<!-- This layout is used inside the General Information section -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@drawable/rounded_card" >
+    <TextView
+        android:id="@+id/tv_info_label" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#8A8A8E"
+        android:textSize="12sp"
+        tools:text="عنوان المعلومة" />
+
+    <TextView
+        android:id="@+id/tv_info_value" 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="#3F3D56"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:text="قيمة المعلومة" />
+
+</LinearLayout>

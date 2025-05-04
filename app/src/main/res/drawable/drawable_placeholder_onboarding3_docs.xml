@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="150dp"
+    android:viewportWidth="200"
+    android:viewportHeight="150">
+
+    <!-- Background cards (grey) -->
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M30,40 h60 v80 h-60 z" /> 
+    <path
+        android:fillColor="#E0E0E0"
+        android:pathData="M110,40 h60 v80 h-60 z" /> 
+
+    <!-- Foreground card (purple) -->
+    <path
+        android:fillColor="@color/onboarding_primary"
+        android:pathData="M70,20 h60 v80 h-60 z" /> 
+
+    <!-- Lines on foreground card -->
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:pathData="M85,60 h30" />
+    <path
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:pathData="M85,75 h30" />
+
+</vector>
+<!-- This is a very basic placeholder for the documents/opportunities graphic. Replace with your actual asset. -->

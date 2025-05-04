@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="40"
+    android:viewportHeight="40">
+
+    <path
+        android:fillColor="#006C35" 
+        android:pathData="M5,5 h30 v30 h-30 z" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M10,10 h20 v5 h-20 z" /> 
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M15,18 h10 v10 h-10 z" /> 
+
+</vector>
+<!-- This is a very basic placeholder for the Saudi emblem. Replace with your actual asset. -->

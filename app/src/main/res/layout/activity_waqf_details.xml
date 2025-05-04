@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA"
+    android:layoutDirection="rtl"
+    tools:context=".Nader.WaqfDetailsActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="8dp"
+                    app:tint="#3F3D56"
+                    android:contentDescription="@string/back_button_desc" />
+
+                <TextView
+                    android:id="@+id/tv_toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="#3F3D56"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="تفاصيل الوقف" />
+
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="100dp">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp">
+
+                <ImageView
+                    android:id="@+id/iv_waqf_header_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    tools:src="@drawable/icon"
+                    android:contentDescription="@string/waqf_image_desc" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/gradient_overlay" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/tv_waqf_tag"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_tag_purple"
+                        android:paddingHorizontal="12dp"
+                        android:paddingVertical="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        app:drawableStartCompat="@drawable/ic_tag"
+                        android:drawablePadding="4dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:text="رهن" />
+
+                    <FrameLayout
+                        android:id="@+id/progress_circular_container"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_progress_label_header"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <ProgressBar
+                            android:id="@+id/progress_circular"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:max="100"
+                            android:progress="20"
+                            android:progressDrawable="@drawable/circular_progress_bar"
+                            android:rotation="-90"/>
+
+                        <TextView
+                            android:id="@+id/tv_progress_percentage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:text="20%" />
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tv_progress_label_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/coverage_percentage"
+                        android:textColor="#E0E0E0"
+                        android:textSize="11sp"
+                        android:layout_marginBottom="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/progress_circular_container"
+                        app:layout_constraintEnd_toEndOf="@+id/progress_circular_container"/>
+
+                    <TextView
+                        android:id="@+id/tv_waqf_details_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_waqf_details_company"
+                        app:layout_constraintStart_toEndOf="@+id/tv_waqf_tag"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:text="اسم المشروع الوقفي الطويل " />
+
+                    <TextView
+                        android:id="@+id/tv_waqf_details_company"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#E0E0E0"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_waqf_details_name"
+                        app:layout_constraintStart_toStartOf="@+id/tv_waqf_details_name"
+                        tools:text="اسم الشركة المسؤولة أو الوصف" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SectionCardView">
+                <LinearLayout style="@style/SectionContentLayout">
+                    <TextView
+                        style="@style/SectionTitle"
+                        android:text="@string/general_information" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
+                            <include layout="@layout/info_card_item_redesigned" android:id="@+id/info_funding_amount" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="6dp"/>
+                            <include layout="@layout/info_card_item_redesigned" android:id="@+id/info_end_period" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="6dp"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="12dp">
+                            <include layout="@layout/info_card_item_redesigned" android:id="@+id/info_opportunity_duration" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="6dp"/>
+                            <include layout="@layout/info_card_item_redesigned" android:id="@+id/info_annual_return" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="6dp"/>
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <include layout="@layout/info_card_item_redesigned" android:id="@+id/info_sukuk_date" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="6dp"/>
+                            <include layout="@layout/info_card_item_redesigned" android:id="@+id/info_issuance_amount" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="6dp"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SectionCardView">
+                <LinearLayout style="@style/SectionContentLayout">
+                    <TextView
+                        style="@style/SectionTitle"
+                        android:text="@string/investment_return_calculator" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/select_sukuk_count"
+                        android:textColor="#3F3D56"
+                        android:textSize="14sp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp">
+                        <SeekBar
+                            android:id="@+id/seekbar_sukuk_count"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_toStartOf="@+id/tv_sukuk_count_value"
+                            android:layout_marginEnd="16dp"
+                            android:max="100"
+                            android:progress="0"
+                            android:progressTint="#6A67CE"
+                            android:thumbTint="#6A67CE"/>
+
+                        <TextView
+                            android:id="@+id/tv_sukuk_count_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:minWidth="40dp"
+                            android:gravity="center"
+                            android:textColor="#6A67CE"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:text="0"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout style="@style/CalculatorResultBox">
+                            <TextView style="@style/CalculatorResultLabel" android:text="@string/investment_amount"/>
+                            <TextView style="@style/CalculatorResultValue" android:id="@+id/tv_investment_amount" tools:text="0.00 ر.س" />
+                        </LinearLayout>
+
+                        <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#E0E0E0" android:layout_marginHorizontal="8dp"/>
+
+                        <LinearLayout style="@style/CalculatorResultBox">
+                            <TextView style="@style/CalculatorResultLabel" android:text="@string/net_profit"/>
+                            <TextView style="@style/CalculatorResultValue" android:id="@+id/tv_net_profit" tools:text="0.00 ر.س" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="vertical">
+                        <LinearLayout style="@style/CalculatorDetailRow">
+                            <TextView style="@style/CalculatorDetailLabel" android:text="@string/payment_date_label"/>
+                            <TextView style="@style/CalculatorDetailValue" android:id="@+id/tv_calc_payment_date" tools:text="-"/>
+                        </LinearLayout>
+                        <LinearLayout style="@style/CalculatorDetailRow">
+                            <TextView style="@style/CalculatorDetailLabel" android:text="@string/nominal_value_label"/>
+                            <TextView style="@style/CalculatorDetailValue" android:id="@+id/tv_calc_nominal_value" tools:text="-"/>
+                        </LinearLayout>
+                        <LinearLayout style="@style/CalculatorDetailRow">
+                            <TextView style="@style/CalculatorDetailLabel" android:text="@string/net_profit_label"/>
+                            <TextView style="@style/CalculatorDetailValue" android:id="@+id/tv_calc_net_profit" tools:text="-"/>
+                        </LinearLayout>
+                        <LinearLayout style="@style/CalculatorDetailRow">
+                            <TextView style="@style/CalculatorDetailLabel" android:text="@string/total_amount_label"/>
+                            <TextView style="@style/CalculatorDetailValue" android:id="@+id/tv_calc_total_amount" tools:text="-"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SectionCardView">
+                <LinearLayout style="@style/SectionContentLayout">
+                    <TextView
+                        style="@style/SectionTitle"
+                        android:text="@string/documents" />
+
+                    <LinearLayout
+                        android:id="@+id/layout_documents"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/document_item_redesigned" android:id="@+id/doc_summary"/>
+                        <View style="@style/Divider"/>
+                        <include layout="@layout/document_item_redesigned" android:id="@+id/doc_sukuk"/>
+                        <View style="@style/Divider"/>
+                        <include layout="@layout/document_item_redesigned" android:id="@+id/doc_prospectus"/>
+                        <View style="@style/Divider"/>
+                        <include layout="@layout/document_item_redesigned" android:id="@+id/doc_legal"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SectionCardView">
+                <LinearLayout style="@style/SectionContentLayout">
+                    <TextView
+                        style="@style/SectionTitle"
+                        android:text="@string/guarantees" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <include layout="@layout/guarantee_card_item" android:id="@+id/guarantee_association" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginEnd="4dp"/>
+                        <include layout="@layout/guarantee_card_item" android:id="@+id/guarantee_authority" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginHorizontal="4dp"/>
+                        <include layout="@layout/guarantee_card_item" android:id="@+id/guarantee_municipal" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="4dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SectionCardView">
+                <LinearLayout style="@style/SectionContentLayout">
+                    <TextView
+                        style="@style/SectionTitle"
+                        android:text="@string/project_information" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout style="@style/ProjectInfoRowRedesigned">
+                            <TextView style="@style/ProjectInfoLabel" android:text="@string/project_type_label"/>
+                            <TextView style="@style/ProjectInfoValue" android:id="@+id/tv_project_type" tools:text="شقق سكنية"/>
+                        </LinearLayout>
+                        <View style="@style/Divider"/>
+                        <LinearLayout style="@style/ProjectInfoRowRedesigned">
+                            <TextView style="@style/ProjectInfoLabel" android:text="@string/number_of_units_label"/>
+                            <TextView style="@style/ProjectInfoValue" android:id="@+id/tv_project_units" tools:text="50"/>
+                        </LinearLayout>
+                        <View style="@style/Divider"/>
+                        <LinearLayout style="@style/ProjectInfoRowRedesigned">
+                            <TextView style="@style/ProjectInfoLabel" android:text="@string/project_end_date_label"/>
+                            <TextView style="@style/ProjectInfoValue" android:id="@+id/tv_project_end_date" tools:text="2026/12/12"/>
+                        </LinearLayout>
+                        <View style="@style/Divider"/>
+                        <LinearLayout style="@style/ProjectInfoRowRedesigned">
+                            <TextView style="@style/ProjectInfoLabel" android:text="@string/waqif_funding_percentage_label"/>
+                            <TextView style="@style/ProjectInfoValue" android:id="@+id/tv_project_waqif_funding" tools:text="50%"/>
+                        </LinearLayout>
+                        <View style="@style/Divider"/>
+                        <LinearLayout style="@style/ProjectInfoRowRedesigned">
+                            <TextView style="@style/ProjectInfoLabel" android:text="@string/nazir_funding_percentage_label"/>
+                            <TextView style="@style/ProjectInfoValue" android:id="@+id/tv_project_nazir_funding" tools:text="50%"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SectionCardView">
+                <LinearLayout style="@style/SectionContentLayout">
+                    <TextView
+                        style="@style/SectionTitle"
+                        android:text="@string/project_location" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="0dp">
+                        <ImageView
+                            android:id="@+id/iv_map"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/map"
+                            android:contentDescription="@string/map_image_desc" />
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/SectionCardView">
+                <LinearLayout style="@style/SectionContentLayout">
+                    <TextView
+                        style="@style/SectionTitle"
+                        android:text="@string/risk_disclaimer_title" />
+
+                    <TextView
+                        android:id="@+id/tv_risk_disclaimer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#555555"
+                        android:textSize="13sp"
+                        android:lineSpacingExtra="5dp"
+                        tools:text="@string/risk_disclaimer_placeholder" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_endow_now"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:paddingVertical="14dp"
+        android:text="@string/endow_now"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="12dp"
+        android:backgroundTint="#6A67CE"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

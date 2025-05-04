@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Placeholder: يجب وضع هذا الملف في مجلد res/drawable -->
+<!-- أيقونة حالة الرفض (دائرة حمراء بداخلها علامة X بيضاء) -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background Circle -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/statusRejectedBackground"/>
+            <size android:width="36dp" android:height="36dp"/>
+        </shape>
+    </item>
+    <!-- X Mark Icon (Placeholder using a simple vector) -->
+    <item android:gravity="center" android:width="18dp" android:height="18dp">
+        <vector android:height="24dp" android:tint="@color/statusRejectedIcon"
+            android:viewportHeight="24.0" android:viewportWidth="24.0"
+            android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+            <path android:fillColor="@android:color/white" android:pathData="M19,6.41L17.59,5 12,10.59 6.41,5 5,6.41 10.59,12 5,17.59 6.41,19 12,13.41 17.59,19 19,17.59 13.41,12z"/>
+        </vector>
+    </item>
+</layer-list>
+

@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="OtpBoxStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/otp_box_background</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">number</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:layout_margin">4dp</item>
+    </style>
+
+
+   <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+    <item name="colorOnPrimary">@color/colorOnPrimary</item>
+
+    <item name="colorSecondary">@color/colorSecondary</item>
+    <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+    <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+    <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+</style>
+
+<style name="FormLabelStyle" parent="Widget.AppCompat.TextView">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginBottom">4dp</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/textColorSecondary</item>
+</style>
+
+<style name="FormInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginBottom">16dp</item>
+    <item name="boxStrokeColor">@color/primary_dark</item>
+    <item name="hintTextColor">@color/primary_dark</item>
+    <item name="boxCornerRadiusTopStart">8dp</item>
+    <item name="boxCornerRadiusTopEnd">8dp</item>
+    <item name="boxCornerRadiusBottomStart">8dp</item>
+    <item name="boxCornerRadiusBottomEnd">8dp</item>
+</style>
+
+<style name="FormEditTextStyle" parent="Widget.AppCompat.EditText">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textSize">14sp</item>
+
+    <item name="android:paddingTop">12dp</item>
+    <item name="android:paddingBottom">12dp</item>
+    <item name="android:paddingStart">12dp</item>
+    <item name="android:paddingEnd">12dp</item>
+
+    <item name="android:textColor">@color/textColorPrimary</item>
+
+    <item name="android:background">@null</item>
+</style>
+
+<style name="RoundedImageView">
+    <item name="cornerFamily">rounded</item>
+    <item name="cornerSize">8dp</item>
+</style>
+
+
+    <style name="TableRowStyle">
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="TableKeyText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#8A8A8E</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TableValueText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#3F3D56</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">end</item>
+    </style>
+
+<!--    <style name="SectionTitle" parent="Widget.AppCompat.TextView">-->
+<!--        <item name="android:layout_width">wrap_content</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        <item name="android:layout_marginStart">16dp</item>-->
+<!--        <item name="android:layout_marginTop">24dp</item>-->
+<!--        <item name="android:layout_marginBottom">8dp</item>-->
+<!--        <item name="android:textColor">#3F3D56</item>-->
+<!--        <item name="android:textSize">16sp</item>-->
+<!--        <item name="android:textStyle">bold</item>-->
+<!--    </style>-->
+
+    <style name="CustomCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+<!--    <style name="Divider">-->
+<!--        <item name="android:layout_width">match_parent</item>-->
+<!--        <item name="android:layout_height">1dp</item>-->
+<!--        <item name="android:background">#EFEFEF</item>-->
+<!--        <item name="android:layout_margin">8dp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CalculatorDetailLabel" parent="Widget.AppCompat.TextView">-->
+<!--        <item name="android:layout_width">wrap_content</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        <item name="android:textColor">#8A8A8E</item>-->
+<!--        <item name="android:textSize">10sp</item>-->
+<!--        <item name="android:layout_marginEnd">4dp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CalculatorDetailValue" parent="Widget.AppCompat.TextView">-->
+<!--        <item name="android:layout_width">0dp</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        <item name="android:layout_weight">1</item>-->
+<!--        <item name="android:textColor">#3F3D56</item>-->
+<!--        <item name="android:textSize">10sp</item>-->
+<!--        <item name="android:textStyle">bold</item>-->
+<!--        <item name="android:layout_marginEnd">8dp</item>-->
+<!--        <item name="android:gravity">start</item>-->
+<!--    </style>-->
+
+    <style name="ProjectInfoRow" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+<!--    <style name="ProjectInfoLabel" parent="Widget.AppCompat.TextView">-->
+<!--        <item name="android:layout_width">wrap_content</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        <item name="android:textColor">#8A8A8E</item>-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:layout_alignParentEnd">true</item>-->
+<!--        <item name="android:layout_centerVertical">true</item>-->
+<!--    </style>-->
+
+<!--    <style name="ProjectInfoValue" parent="Widget.AppCompat.TextView">-->
+<!--        <item name="android:layout_width">wrap_content</item>-->
+<!--        <item name="android:layout_height">wrap_content</item>-->
+<!--        <item name="android:textColor">#3F3D56</item>-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:textStyle">bold</item>-->
+<!--        <item name="android:layout_alignParentStart">true</item>-->
+<!--        <item name="android:layout_centerVertical">true</item>-->
+<!--    </style>-->
+
+    <style name="CustomChip" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipStrokeColor">@color/primary_dark</item>
+        <item name="chipBackgroundColor">@color/chip_selector</item>
+        <item name="android:textColor">@color/text_selector</item>
+        <item name="checkedIconVisible">false</item>
+        <item name="chipCornerRadius">8dp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:minWidth">90dp</item>
+    </style>
+
+    <style name="SectionCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="SectionContentLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">16dp</item>
+    </style>
+
+    <style name="SectionTitle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:textColor">#3F3D56</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CalculatorResultBox">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="CalculatorResultLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#8A8A8E</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="CalculatorResultValue">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textColor">#3F3D56</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CalculatorDetailRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">6dp</item>
+    </style>
+
+    <style name="CalculatorDetailLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#8A8A8E</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="CalculatorDetailValue">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">end</item>
+        <item name="android:textColor">#3F3D56</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">8dp</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#EAEAEA</item>
+        <item name="android:layout_margin">12dp</item>
+    </style>
+
+    <style name="ProjectInfoRowRedesigned">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="ProjectInfoLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#8A8A8E</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="ProjectInfoValue">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">end</item>
+        <item name="android:textColor">#3F3D56</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">8dp</item>
+    </style>
+</resources>
