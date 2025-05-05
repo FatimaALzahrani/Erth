@@ -68,7 +68,8 @@ public class LoginVerifyCodeActivity extends AppCompatActivity {
         otp4 = findViewById(R.id.otp4);
         otp5 = findViewById(R.id.otp5);
         otp6 = findViewById(R.id.otp6);
-        otpFields = new EditText[]{otp1, otp2, otp3, otp4, otp5, otp6};
+//        otpFields = new EditText[]{otp1, otp2, otp3, otp4, otp5, otp6};
+        otpFields = new EditText[]{otp6, otp5, otp4, otp3, otp2, otp1};
 
         verifyButton = findViewById(R.id.verify_button);
         resendText = findViewById(R.id.resend_text);

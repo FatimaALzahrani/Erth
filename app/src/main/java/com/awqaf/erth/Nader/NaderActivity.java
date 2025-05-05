@@ -56,6 +56,7 @@ public class NaderActivity extends AppCompatActivity {
     private ValueEventListener statsListener;
 
     private DecimalFormat currencyFormat = new DecimalFormat("#,##0.00 SAR");
+    private String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +71,7 @@ public class NaderActivity extends AppCompatActivity {
             // finish();
             return;
         }
-        String userId = currentUser.getUid();
+        userId = currentUser.getUid();
         userWaqfsRef = FirebaseDatabase.getInstance().getReference("waqfs");
 
         initializeUI();
@@ -130,9 +131,9 @@ public class NaderActivity extends AppCompatActivity {
                                 }
 
                                 userWaqfs.add(waqf);
-                                String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                                String ownerId = userSnapshot.getKey();
 
-                                if (waqf.userId != null && waqf.userId.equals(userId)) {
+                                if (ownerId.equals(userId)) {
                                     totalCount++;
                                     String status = waqf.status != null ? waqf.status.toUpperCase(Locale.ROOT) : "";
                                     switch (status) {
